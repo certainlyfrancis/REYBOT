@@ -4,10 +4,11 @@ module.exports.config = {
   name: "ai",
   version: "1.0.0",
   hasPermission: 0,
-  credits: "Ralph",
-  description: "bard",
-  commandCategory: "research",
-  usages: "ai [query/prompt]",
+  credits: "𝖥𝗋𝖺𝗇𝖼𝗂𝗌 𝖫𝗈𝗒𝖽 𝖱𝖺𝗏𝖺𝗅 𝖠𝖯𝖨 𝗉𝗋𝗈𝗏𝗂𝖽𝖾𝖽 𝖻𝗒 𝖧𝖺𝗓𝖾𝖾𝗒 𝖶𝗎",
+  description: "𝗔𝗜 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗆𝖺𝖽𝖾 𝖻𝗒 𝖥𝗋𝖺𝗇𝖼𝗂𝗌 𝖫𝗈𝗒𝖽 𝖱𝖺𝗏𝖺𝗅 𝗂𝗌 𝖺𝗇 𝖠𝗋𝗍𝗂𝖿𝗂𝖼𝗂𝖺𝗅 𝖨𝗇𝗍𝖾𝗅𝗅𝗂𝗀𝖾𝗇𝖼𝖾 ( 𝖠𝖨 ) 𝖿𝗋𝗈𝗆 𝗍𝗁𝖾 𝖺𝗉𝗂 𝗈𝖿 𝖧𝖺𝗓𝖾𝖾𝗒 𝖶𝗎 𝗍𝗁𝖺𝗍 𝖼𝖺𝗇 𝗁𝖾𝗅𝗉 𝗒𝗈𝗎 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖺𝗌𝗌𝗂𝗀𝗇𝗆𝖾𝗇𝗍𝗌.",
+  commandCategory: "𝗘𝗗𝗨𝗖𝗔𝗧𝗜𝗢𝗡𝗔𝗟",
+  usePrefix: false,
+  usages: "[query/prompt]",
   cooldowns: 0,
 };
 
@@ -38,7 +39,7 @@ module.exports.run = async function ({ api, event, args }) {
     if (response.status === 200 && response.data && response.data.message) {
       const answer = response.data.message;
       const formattedAnswer = formatFont(answer); // Apply font formatting
-      api.sendMessage("🌟 | 𝗥𝗘𝗦𝗣𝗢𝗡𝗗\n━━━━━━━━━━━━━━━━━━\n"formattedAnswer, threadID, messageID);
+      api.sendMessage("🌟 | 𝗥𝗘𝗦𝗣𝗢𝗡𝗗\n━━━━━━━━━━━━━━━━━━\n" + formattedAnswer, threadID, messageID);
     } else {
       api.sendMessage("❎ | 𝖳𝗁𝖾𝗋𝖾 𝗂𝗌 𝗇𝗈 𝗋𝖾𝗅𝖾𝗏𝖺𝗇𝗍 𝖺𝗇𝗌𝗐𝖾𝗋 𝗍𝗈 𝗍𝗁𝖺𝗍, 𝖯𝗅𝖾𝖺𝗌𝖾 𝖻𝖾 𝗌𝗉𝖾𝖼𝗂𝖿𝗂𝖼 𝗈𝗋 𝗀𝗂𝗏𝖾 𝗆𝗈𝗋𝖾 𝗂𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇 𝗍𝗈 𝗒𝗈𝗎𝗋 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇.", threadID, messageID);
     }
