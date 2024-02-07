@@ -32,4 +32,4 @@ module.exports.run = async function ({ api, event, args }) {
     api.sendMessage('🔴 | 𝖲𝗈𝗆𝖾𝗍𝗁𝗂𝗇𝗀 𝗐𝖾𝗇𝗍 𝗐𝗋𝗈𝗇𝗀, 𝖯𝗅𝖾𝖺𝗌𝖾 𝗍𝗋𝗒 𝖺𝗀𝖺𝗂𝗇 𝗅𝖺𝗍𝖾𝗋\n\n ' + error, event.threadID, event.messageID);
     api.setMessageReaction('🔴', event.messageID, () => {}, true);
   }
-}; 
+};
